@@ -1,8 +1,11 @@
 {
-  "name": "typescript-npm-package-template",
+  "name": "@eagle-cooler/util",
   "version": "0.0.0-development",
-  "description": "A template for creating npm packages using TypeScript and VSCode",
+  "description": "A set of utilities and tools to aid the development of Eagle plugins and extensions",
   "main": "./lib/index.js",
+  "bin": {
+    "eagle-cooler": "./lib/cli.js"
+  },
   "files": [
     "lib/**/*"
   ],
@@ -19,32 +22,27 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ryansonshine/typescript-npm-package-template.git"
+    "url": "git+https://github.com/eagle-cooler/eagle-cooler.git"
   },
   "license": "MIT",
   "author": {
-    "name": "Ryan Sonshine",
-    "email": "ryansonshine@users.noreply.github.com",
-    "url": "https://github.com/ryansonshine"
+    "name": "Zackary W",
+    "email": "gitzackw@gmail.com",
+    "url": "https://github.com/ZackaryW"
   },
   "engines": {
     "node": ">=12.0"
   },
   "keywords": [
-    "boilerplate",
-    "template",
-    "typescript",
-    "vscode",
-    "jest",
-    "husky",
-    "commitizen",
-    "semantic-release",
-    "codecov"
+    "eagle",
+    "eagle-plugin",
+    "eagle-extension",
+    "utils"
   ],
   "bugs": {
-    "url": "https://github.com/ryansonshine/typescript-npm-package-template/issues"
+    "url": "https://github.com/eagle-cooler/eagle-cooler/issues"
   },
-  "homepage": "https://github.com/ryansonshine/typescript-npm-package-template#readme",
+  "homepage": "https://github.com/eagle-cooler/eagle-cooler#readme",
   "devDependencies": {
     "@ryansonshine/commitizen": "^4.2.8",
     "@ryansonshine/cz-conventional-changelog": "^3.3.4",
@@ -52,6 +50,7 @@
     "@types/node": "^12.20.11",
     "@typescript-eslint/eslint-plugin": "^4.22.0",
     "@typescript-eslint/parser": "^4.22.0",
+    "commander": "^11.1.0",
     "conventional-changelog-conventionalcommits": "^5.0.0",
     "eslint": "^7.25.0",
     "eslint-config-prettier": "^8.3.0",
