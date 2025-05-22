@@ -7,7 +7,8 @@ The library follows a modular architecture with clear separation of concerns:
 1. **Core Modules**
 
    - Meta: Metadata and configuration management
-   - WebAPI: Web API integration
+   - WebAPI: Eagle API integration
+   - EagleWrapover: Eagle logic abstraction
    - Utils: Common utility functions
 
 2. **Type System**
@@ -32,7 +33,12 @@ The library follows a modular architecture with clear separation of concerns:
    - API integration
    - File system abstractions
 
-4. **Utility Pattern**
+4. **Wrapper Pattern**
+
+   - Eagle logic abstraction
+   - Independent implementation
+
+5. **Utility Pattern**
    - Pure functions for common operations
    - Stateless operations
 
@@ -41,7 +47,9 @@ The library follows a modular architecture with clear separation of concerns:
 ```
 src/
 ├── meta.ts         # Metadata management
-├── webapi.ts       # Web API integration
+├── webapi.ts       # Eagle API integration
+├── wrapover.ts     # Eagle logic wrapper
+├── eagle.d.ts      # Type definitions
 ├── utils/          # Utility functions
 │   ├── autoFile.ts # File operations
 │   └── index.ts    # Utility exports
@@ -50,26 +58,52 @@ src/
 
 ## Critical Implementation Paths
 
-1. **Metadata Management**
+1. **API Integration**
+
+   - HTTP request handling
+   - Token management
+   - Response processing
+   - Error handling
+
+2. **Metadata Management**
 
    - File system operations
    - JSON handling
    - Configuration persistence
 
-2. **API Integration**
+3. **Eagle Wrapper**
 
-   - HTTP requests
-   - Response handling
-   - Error management
+   - Logic abstraction
+   - Data structures
+   - File operations
+   - Type definitions
 
 ## Error Handling
 
 - Consistent error types
 - Error propagation patterns
 - Error recovery strategies
+- API error handling
 
 ## Testing Strategy
 
 - Unit tests for utilities
 - Integration tests for API
 - Mock implementations for external dependencies
+- Wrapper functionality tests
+
+## Type System
+
+1. **Core Types**
+
+   - Eagle API types
+   - Configuration types
+   - File system types
+   - Wrapper types
+
+2. **Type Safety**
+
+   - Strict mode enabled
+   - Type guards
+   - Type assertions
+   - Generic types

@@ -11,13 +11,13 @@
 
 2. **Core Features**
 
-   - Meta class with comprehensive metadata management
-   - LibraryConfig for library-level settings
-   - FolderConfig for folder-specific configurations
-   - AppConfig for application-wide settings
-   - File system operations with JSON persistence
-   - Path resolution utilities
-   - Type-safe configuration interfaces
+   - Meta class for metadata management
+   - WebAPI class for Eagle API integration
+   - EagleWrapover for Eagle logic abstraction
+   - File system utilities and type definitions
+   - API token management
+   - HTTP request handling
+   - JSON file operations
 
 3. **Development Tools**
    - Git hooks with Husky
@@ -30,17 +30,17 @@
 
 1. **Features**
 
-   - Additional metadata format support
+   - Complete EagleWrapover implementation
+   - Additional API integrations
    - Caching mechanisms
-   - Configuration validation
    - Advanced error handling
    - Performance optimizations
 
 2. **Testing**
 
-   - Complete test coverage for file operations
-   - Integration tests for configuration management
-   - End-to-end tests for metadata workflows
+   - Complete test coverage for API operations
+   - Integration tests for Eagle wrapper
+   - End-to-end tests for API workflows
    - Performance tests for large datasets
 
 3. **Documentation**
@@ -54,8 +54,8 @@
 
 1. **Development**
 
-   - Meta class implementation complete
-   - Core configuration features working
+   - Core classes implemented
+   - API integration working
    - File system operations implemented
    - Type safety enforced
    - Initial tests passing
@@ -74,7 +74,7 @@
    - Test coverage needs improvement
    - Documentation needs expansion
    - Error handling needs enhancement
-   - Configuration validation needed
+   - Wrapper implementation incomplete
    - Performance optimization required
 
 2. **Process**
@@ -89,9 +89,9 @@
 
    - Implemented class-based design
    - Added type safety with strict mode
-   - Enhanced file system operations
-   - Improved configuration management
-   - Added comprehensive metadata handling
+   - Enhanced API integration
+   - Improved file system operations
+   - Added Eagle wrapper abstraction
 
 2. **Development**
    - Adopted conventional commits

@@ -11,10 +11,17 @@
    - Prettier 2.2.1 for formatting
 
 2. **Development Tools**
+
    - Husky for git hooks
    - Commitizen for commit messages
    - Semantic Release for versioning
    - ts-jest for TypeScript testing
+
+3. **API Integration**
+   - Fetch API for HTTP requests
+   - JSON handling
+   - Token management
+   - Error handling
 
 ## Development Setup
 
@@ -23,6 +30,7 @@
    - Node.js >=12.0
    - npm or yarn
    - Git
+   - Eagle application
 
 2. **Installation**
 
@@ -50,9 +58,16 @@
    - CommonJS modules
 
 3. **Build Output**
+
    - Compiled to `lib/` directory
    - Type definitions included
    - Source maps generated
+
+4. **API Requirements**
+   - Eagle application running
+   - API token available
+   - Local server access
+   - Network connectivity
 
 ## Dependencies
 
@@ -82,11 +97,13 @@
    - Jest for unit tests
    - Coverage reporting
    - Watch mode for development
+   - API mocking
 
 3. **Code Quality**
    - ESLint for linting
    - Prettier for formatting
    - TypeScript for type checking
+   - JSDoc for documentation
 
 ## Build Process
 
@@ -101,8 +118,32 @@
    - Unit test execution
    - Coverage reporting
    - Type checking
+   - API integration tests
 
 3. **Release**
    - Version bumping
    - Changelog generation
    - NPM publishing
+
+## API Integration
+
+1. **Eagle API**
+
+   - Local server communication
+   - Token-based authentication
+   - JSON request/response
+   - Error handling
+
+2. **File System**
+
+   - JSON file operations
+   - Path resolution
+   - File existence checks
+   - Automatic file creation
+
+3. **Type Definitions**
+
+   - Eagle API types
+   - Configuration types
+   - File system types
+   - Wrapper types

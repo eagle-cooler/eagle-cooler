@@ -3,7 +3,7 @@
 [![npm version](https://badge.fury.io/js/%40eagle-cooler%2Futil.svg)](https://badge.fury.io/js/%40eagle-cooler%2Futil)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-> A comprehensive utility library for Eagle plugin and extension development, providing essential tools for metadata management, configuration handling, and file system operations.
+> A comprehensive utility library for Eagle plugin and extension development, providing essential tools for metadata management, API integration, and Eagle logic abstraction.
 
 ## Features
 
@@ -15,18 +15,28 @@
   - Application-wide configuration
   - Plugin configuration support
 
-- **Configuration Management**
+- **Eagle API Integration**
 
-  - JSON-based configuration storage
-  - Type-safe configuration interfaces
-  - Hierarchical configuration structure
-  - Automatic file creation and updates
+  - Comprehensive API client
+  - Token-based authentication
+  - Type-safe API methods
+  - Error handling
+  - Request/response processing
+
+- **Eagle Logic Abstraction**
+
+  - Independent Eagle logic wrapper
+  - Folder management
+  - Tag management
+  - Metadata handling
+  - File operations
 
 - **File System Operations**
   - Path resolution utilities
   - File existence checks
   - Automatic file creation
   - JSON file handling
+  - Type-safe file operations
 
 ## Installation
 
@@ -55,35 +65,53 @@ const appConfig = await Meta.appConfig();
 const scopeConfig = appConfig.scope('myScope');
 ```
 
-### Configuration Management
+### Eagle API Integration
 
 ```typescript
-import { Meta } from '@eagle-cooler/util';
+import { WebApi } from '@eagle-cooler/util';
 
-// Library configuration
-const libraryConfig = Meta.libraryConfig();
-libraryConfig.config.settings = { theme: 'dark' };
-libraryConfig.save();
+// Application info
+const appInfo = await WebApi.application.info();
 
-// Folder configuration
-const folderConfig = Meta.folderConfig(folderId);
-folderConfig.config.customSettings = { enabled: true };
-folderConfig.save();
+// Folder operations
+const folder = await WebApi.folder.create('New Folder');
+await WebApi.folder.rename(folder.id, 'Renamed Folder');
 
-// Application configuration
-const appConfig = await Meta.appConfig();
-const scopeConfig = appConfig.scope('myPlugin');
-scopeConfig.settings = { version: '1.0.0' };
-appConfig.save();
+// Item operations
+await WebApi.item.update({
+  itemId: 'item-id',
+  tags: ['tag1', 'tag2'],
+  annotation: 'Note',
+  star: true,
+});
+
+// Library operations
+const libraryInfo = await WebApi.library.info();
+await WebApi.library.switch('/path/to/library');
+```
+
+### Eagle Logic Wrapper
+
+```typescript
+import { EagleWrapover } from '@eagle-cooler/util';
+
+// Create wrapper instance
+const wrapper = new EagleWrapover('/path/to/library');
+
+// Access metadata
+const metadata = wrapper.metadata;
+const folder = metadata.getFolderById('folder-id');
+const tagsGroup = metadata.getTagsGroupByName('group-name');
 ```
 
 ## Development
 
 ### Prerequisites
 
-- Node.js >= 12.0
+- Node.js >=12.0
 - npm or yarn
 - Git
+- Eagle application
 
 ### Setup
 
@@ -132,18 +160,25 @@ For detailed documentation, please visit our [documentation site](https://eagle-
    - Provides item, library, and application-level operations
    - Handles file system interactions
 
-2. **Configuration Classes**
+2. **WebAPI Class**
 
-   - `LibraryConfig`: Library-level settings
-   - `FolderConfig`: Folder-specific configurations
-   - `AppConfig`: Application-wide settings
-   - `MetaExt`: Metadata extension handling
+   - Eagle API client implementation
+   - Token management and authentication
+   - Type-safe API methods
+   - Error handling and response processing
 
-3. **File System Operations**
-   - Automatic file creation
-   - Path resolution
-   - JSON persistence
-   - Error handling
+3. **EagleWrapover**
+
+   - Independent Eagle logic implementation
+   - Folder and tag management
+   - Metadata handling
+   - File system operations
+
+4. **Utility Classes**
+   - File system operations
+   - Type definitions
+   - Common utilities
+   - Helper functions
 
 ## Contributing
 
