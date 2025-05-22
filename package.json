@@ -3,12 +3,14 @@
   "version": "0.0.1",
   "description": "A set of utilities and tools to aid the development of Eagle plugins and extensions",
   "main": "./lib/index.js",
+  "module": "./lib/index.js",
+  "types": "./lib/index.d.ts",
   "files": [
     "lib/**/*"
   ],
   "scripts": {
     "build": "tsc --project tsconfig.build.json",
-    "clean": "rm -rf ./lib/",
+    "clean": "if exist lib rmdir /s /q lib",
     "cm": "cz",
     "lint": "eslint ./src/ --fix",
     "prepare": "husky install",
